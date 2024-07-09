@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Function to gather and print system information
+# Function to get and print system info
 print_info() {
     USERNAME=$(whoami)
     HOSTNAME=$(hostname)
@@ -13,12 +13,11 @@ print_info() {
 
     clear
 
-    # Color codes
+    # Colors
     label_color="\e[1;35m"  # Purple color for labels
     info_color="\e[0;33m"   # Orange color for information
     reset_color="\e[0m"
-
-    # ASCII Banner and System information side by side
+    
     echo -e "
 ===========================================================================================
 ${label_color}     _________                                      Username:\t${info_color}$USERNAME${reset_color}
