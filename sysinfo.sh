@@ -9,7 +9,6 @@ print_info() {
     UPTIME=$(uptime -p)
     MEMORY=$(free -h | awk '/^Mem/ {print $3 "/" $2}')
     DISK=$(df -h | awk '$NF == "/" {print $3 " used / " $2 " total (" $5 " used)"}')
-    CPU_LOAD=$(top -bn1 | awk '/Cpu(s)/ {print 100 - $8"%"}')
 
     clear
 
@@ -27,7 +26,7 @@ ${label_color}  | ___________ |                                   OS:\t\t${info_
 ${label_color}  | | -       | |                                  Uptime:\t\t${info_color}$UPTIME${reset_color}
 ${label_color}  | |         | |                                  Memory:\t\t${info_color}$MEMORY${reset_color}
 ${label_color}  | |_________| |________________________          Disk:\t\t${info_color}$DISK${reset_color}
-${label_color}  \\=____________/   Garv Kamra           )          CPU Load:\t${info_color}$CPU_LOAD${reset_color}
+${label_color}  \\=____________/   Garv Kamra           )         
 ${label_color}  / \"\"\"\"\"\"\"\"\"\"\"\" \\                                    ${reset_color}
 ${label_color} / ::::::::::::: \\                               ${reset_color}
 ${label_color}(_________________)                                 ${reset_color}
